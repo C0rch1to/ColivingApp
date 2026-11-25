@@ -1089,6 +1089,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  container-type: inline-size;
   animation: modalPop 0.16s ease-out;
 }
 
@@ -1151,6 +1152,41 @@ body {
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
+}
+
+/* Modal de Habitación: Botones de acción responsivos que nunca se desencuadran */
+.modal-footer-room {
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.modal-footer-room .modal-footer-left {
+  flex: 0 1 auto;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.modal-footer-room .modal-footer-right {
+  flex: 0 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.btn-room-action {
+  white-space: nowrap;
+  min-width: 0;
+  flex-shrink: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.btn-room-checkout {
+  border-color: var(--danger);
+  color: var(--danger);
 }
 
 .form-group {
@@ -1404,5 +1440,116 @@ body {
 
   .modal-footer {
     padding: 12px 16px;
+  }
+
+  .modal-footer-room {
+    padding: 12px 14px;
+    gap: 6px;
+    flex-wrap: nowrap !important;
+  }
+
+  .modal-footer-room .modal-footer-right {
+    gap: 6px;
+    flex-wrap: nowrap !important;
+  }
+
+  .modal-footer-room .btn-room-action {
+    padding: 7px 11px;
+    font-size: 0.8125rem;
+    min-height: 36px;
+  }
+}
+
+/* Pantallas y contenedores angostos (Mobile pequeños e iPhone SE) */
+@media (max-width: 460px) {
+  .modal-backdrop {
+    padding: 10px;
+  }
+
+  .modal-footer-room {
+    padding: 10px 10px;
+    gap: 6px;
+    flex-wrap: nowrap !important;
+  }
+
+  .modal-footer-room .modal-footer-right {
+    gap: 6px;
+    flex-wrap: nowrap !important;
+  }
+
+  .modal-footer-room .btn-room-action {
+    padding: 6px 9px;
+    font-size: 0.775rem;
+    min-height: 34px;
+  }
+
+  .btn-extra-desocupar {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .modal-backdrop {
+    padding: 6px;
+  }
+
+  .modal-footer-room {
+    padding: 8px 8px;
+    gap: 4px;
+    flex-wrap: nowrap !important;
+  }
+
+  .modal-footer-room .modal-footer-right {
+    gap: 4px;
+    flex-wrap: nowrap !important;
+  }
+
+  .modal-footer-room .btn-room-action {
+    padding: 5px 6px;
+    font-size: 0.72rem;
+    min-height: 32px;
+  }
+}
+
+/* Adaptación fluida por Container Queries del modal */
+@container (max-width: 440px) {
+  .modal-footer-room {
+    padding: 10px 10px;
+    gap: 6px;
+    flex-wrap: nowrap !important;
+  }
+
+  .modal-footer-room .modal-footer-right {
+    gap: 6px;
+    flex-wrap: nowrap !important;
+  }
+
+  .modal-footer-room .btn-room-action {
+    padding: 6px 9px;
+    font-size: 0.775rem;
+    min-height: 34px;
+  }
+
+  .btn-extra-desocupar {
+    display: none;
+  }
+}
+
+@container (max-width: 340px) {
+  .modal-footer-room {
+    padding: 8px 6px;
+    gap: 4px;
+    flex-wrap: nowrap !important;
+  }
+
+  .modal-footer-room .modal-footer-right {
+    gap: 4px;
+    flex-wrap: nowrap !important;
+  }
+
+  .modal-footer-room .btn-room-action {
+    padding: 5px 6px;
+    font-size: 0.72rem;
+    min-height: 32px;
   }
 }

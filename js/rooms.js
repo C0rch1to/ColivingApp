@@ -124,15 +124,15 @@ window.Coliving = window.Coliving || {};
           </div>
         </div>
 
-        <div class="modal-footer">
+        <div class="modal-footer modal-footer-room">
           <div class="modal-footer-left">
-            <button type="button" class="btn btn-outline-danger" onclick="Coliving.rooms.handleCheckOut('${room.id}')">
-              Check-out (Desocupar)
+            <button type="button" class="btn btn-outline-danger btn-room-action btn-room-checkout" onclick="Coliving.rooms.handleCheckOut('${room.id}')" title="Desocupar habitación">
+              <span class="btn-checkout-text">Check-out</span><span class="btn-extra-desocupar"> (Desocupar)</span>
             </button>
           </div>
           <div class="modal-footer-right">
-            <button type="button" class="btn btn-secondary" onclick="Coliving.app.closeModal()">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary btn-room-action" onclick="Coliving.app.closeModal()">Cancelar</button>
+            <button type="submit" class="btn btn-primary btn-room-action">Guardar</button>
           </div>
         </div>
       </form>
